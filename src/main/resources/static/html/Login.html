@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="../css/Login.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body background="../img/fondoLogin.jpg" style="background-size: cover; background-repeat: no-repeat;">
+	<!--Contenedor del Login-->
+	<div class="container">
+		<div class="login-content">
+			<form action="index.html">
+				<img src="../img/logoCitrusFranco.png" style="border-radius: 50%;">
+				<h2 class="title" style="font-size: 35px;">Bienvenidos</h2>
+
+				<!--Campo Usuario-->
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+
+           		   <div class="div">
+           		   		<h5 style="color: rgb(98, 86, 86);">Nombre de usuario</h5>
+           		   		<input id="nombreUsuario" type="text" class="input">
+           		   </div>
+           		</div>
+
+				<!--Campo Contraseña-->
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+
+           		   <div class="div">
+           		    	<h5 style="color: rgb(98, 86, 86);">Clave</h5>
+           		    	<input id="passwordUsuario" type="password" class="input">
+            	   </div>
+            	</div>
+
+            	<input type="button" onclick="iniciarSesion()" class="btn" value="Ingresar">
+            </form>
+        </div>
+    </div>
+    <script src="../js/animaciones/login_animacion.js"></script>
+	<script src="../js/login.js"></script>
+
+
+</body>
+</html>
