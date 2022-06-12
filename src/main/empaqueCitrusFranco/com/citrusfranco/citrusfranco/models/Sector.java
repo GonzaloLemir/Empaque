@@ -20,6 +20,6 @@ public class Sector {
     private long id;
 
     @Getter @Setter @Column(name = "sectornombre")
-    private String puestonombre;
+    private String sectornombre;
 
 }

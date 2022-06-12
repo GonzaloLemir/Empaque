@@ -23,11 +23,8 @@ public class Empleado {
     @Getter @Setter @Column(name = "codigoempleado")
     private long codigoempleado;
 
-    @Getter @Setter @Column(name = "nombre")
+    @Getter @Setter @Column(name = "nombreapellido")
     private String nombre;
-
-    @Getter @Setter @Column(name = "apellido")
-    private String apellido;
 
     @Getter @Setter @Column(name = "email")
     private String email;
@@ -40,5 +37,14 @@ public class Empleado {
 
     @Getter @Setter @Column(name = "foto")
     private byte[] foto;
+
+    @Getter @Setter @Column(name = "puestoid")
+    private long puestoid;
+
+    @Getter @Setter @Column(name = "sectorid")
+    private long sectorid;
+
+    @Getter @Setter @Column(name = "tipoempleadoid")
+    private long tipoempleadoid;
 
 }

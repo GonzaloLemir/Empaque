@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<script src="../js/verificar_credenciales.js"></script>
 	<meta charset="UTF-8">
 	<title>Bienvenido</title>
 	<link rel="stylesheet" href="../css/MenuPrincipal.css">
+	<script src="../js/verificar_credenciales.js"></script>
+
 </head>
 <body>
 	<header class="header">
 		<div class="container">
-		<div class="btn-menu">
-			<label for="btn-menu">☰</label>
-		</div>
+            
+			<div class="btn-menu">
+				<label for="btn-menu">☰</label>
+			</div>
+            
 			<div class="logo">
 				<h1>Citrus Franco</h1>
 			</div>
+            
 			<nav class="menu">
-				<a href="#">Inicio</a>
+				<a href="MenuPrincipal.html">Inicio</a>
+				<a href="Empleados.html">Empleados</a>
 				<a href="#">Nosotros</a>
 			</nav>
+            
 		</div>
 	</header>
+
 	<div class="capa"></div>
-<!--	--------------->
-<input type="checkbox" id="btn-menu">
-<div class="container-menu">
-	<div class="cont-menu">
-		<nav>
-			<a href="#">Hola1</a>
-			<a href="#">Hola2</a>
-		</nav>
-		<label for="btn-menu">✖️</label>
+	<!----------------->
+	<input type="checkbox" id="btn-menu">
+	<div class="container-menu">
+		<div class="cont-menu">
+			<nav>
+				<a href="#">Hola1</a>
+				<a href="#">Hola2</a>
+			</nav>
+			<label for="btn-menu">✖️</label>
+		</div>
 	</div>
-</div>
-
-
+    <br><br><br><br>
+	
+	<!--Medio-->
+	<div class="medio">
+		<label onclick="hola();">a</label>
+	</div>
+	<script>
+        function hola() {
+            alert("hola");
+        }
+    </script>
 </body>
 </html>

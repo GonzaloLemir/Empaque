@@ -13,7 +13,7 @@ public class TipoEmpleadoController {
     @Autowired
     private tipoEmpleado_dao TipoEmpleado_dao;
 
-    @RequestMapping(value = "tipoempleados", method = RequestMethod.GET)
+    @RequestMapping(value = "/tipoempleados", method = RequestMethod.GET)
     public List<TipoEmpleado> getTipoEmpleado(){
         return TipoEmpleado_dao.getTipoEmpleados();
     }

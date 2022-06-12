@@ -1,6 +1,10 @@
 
 window.onload = function() {
     localStorage.clear();
+    if(document.getElementById("nombreUsuario").value != "")
+    {
+      document.getElementById("nombreUsuario").value = "";
+    }
  };
 
 async function iniciarSesion(){

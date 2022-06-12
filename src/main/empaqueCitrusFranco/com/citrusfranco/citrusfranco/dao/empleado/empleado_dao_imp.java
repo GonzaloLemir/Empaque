@@ -19,7 +19,7 @@ public class empleado_dao_imp implements empleado_dao{
 
     @Override
     public List<Empleado> getEmpleado() {
-        String query = "FROM empleado";
+        String query = "FROM Empleado";
         return entityManager.createQuery(query).getResultList();
     }
 

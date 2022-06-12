@@ -11,7 +11,14 @@ public interface asistencia_dao {
 
     Asistencia getAsistencia(long id);
 
+    Asistencia ultimoRegistro(long idEmpleado);
+
     void eliminarAsistencia(long id);
 
-    void registrarAsistencia(Asistencia asistencia);
+    void registrarAsistencia(int idEmpleado);
+
+    void registrarAsistenciaSalida(int idEmpleado);
+
+
+
 }

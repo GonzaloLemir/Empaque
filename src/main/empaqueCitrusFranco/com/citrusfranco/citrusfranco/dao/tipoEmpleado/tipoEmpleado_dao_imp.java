@@ -17,13 +17,13 @@ public class tipoEmpleado_dao_imp implements tipoEmpleado_dao {
 
     @Override
     public List<TipoEmpleado> getTipoEmpleados() {
-        String query = "FROM tipoempleado";
+        String query = "FROM TipoEmpleado";
         return entityManager.createQuery(query).getResultList();
     }
 
     @Override
     public TipoEmpleado getTipoEmpleado(long id) {
-        String query = "FROM tipoempleado WHERE id = "+id+"";
+        String query = "FROM TipoEmpleado WHERE id = "+id+"";
         return (TipoEmpleado) entityManager.createQuery(query).getSingleResult();
     }
 

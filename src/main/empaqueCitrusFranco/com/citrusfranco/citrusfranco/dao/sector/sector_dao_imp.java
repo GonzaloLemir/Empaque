@@ -19,13 +19,13 @@ public class sector_dao_imp implements sector_dao{
 
     @Override
     public List<Sector> getSectores() {
-        String query = "FROM sector";
+        String query = "FROM Sector";
         return entityManager.createQuery(query).getResultList();
     }
 
     @Override
     public Sector getSector(long id) {
-        String query = "FROM sector WHERE id = "+id+"";
+        String query = "FROM Sector WHERE id = "+id+"";
         return (Sector) entityManager.createQuery(query).getSingleResult();
     }
 

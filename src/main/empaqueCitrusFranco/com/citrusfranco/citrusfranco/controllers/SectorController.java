@@ -13,7 +13,7 @@ public class SectorController {
     @Autowired
     private sector_dao Sector_dao;
 
-    @RequestMapping(value = "sectores", method = RequestMethod.GET)
+    @RequestMapping(value = "/sectores", method = RequestMethod.GET)
     public List<Sector> getSector(){
         return Sector_dao.getSectores();
     }

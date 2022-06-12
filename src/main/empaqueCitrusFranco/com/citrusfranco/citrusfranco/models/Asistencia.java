@@ -4,13 +4,13 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.jpa.repository.Temporal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "asistencia")
@@ -24,10 +24,12 @@ public class Asistencia {
     @Getter @Setter @Column(name = "codigoempleado")
     private long codigoempleado;
 
+
     @Getter @Setter @Column(name = "entrada")
-    private LocalDate entrada;
+    private Timestamp entrada;
+
 
     @Getter @Setter @Column(name = "salida")
-    private LocalDate salida;
+    private Timestamp salida;
 
 }

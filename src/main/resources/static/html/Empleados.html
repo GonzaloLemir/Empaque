@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Bienvenido</title>
+	<link rel="stylesheet" href="../css/MenuPrincipal.css">
+    
+    <!--CRUD-->
+    <link rel="stylesheet" href="../css/Crud-button.css">
+    <link rel="stylesheet" href="../css/Crud-main.css">
+    <link rel="stylesheet" href="../css/Crud-modal.css">
+    <link rel="stylesheet" href="../css/Crud-records.css">
+    <script src="../js/Crud.js" defer></script>
+    <!--FIN DEL CRUD-->
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+            
+			<div class="btn-menu">
+				<label for="btn-menu">☰</label>
+			</div>
+            
+			<div class="logo">
+				<h1>Citrus Franco</h1>
+			</div>
+            
+			<nav class="menu">
+				<a href="MenuPrincipal.html">Inicio</a>
+				<a href="Empleados.html">Empleados</a>
+				<a href="#">Nosotros</a>
+			</nav>
+            
+		</div>
+	</header>
+
+	<div class="capa"></div>
+	<!----------------->
+	<input type="checkbox" id="btn-menu">
+	<div class="container-menu">
+		<div class="cont-menu">
+			<nav>
+				<a href="#">Hola1</a>
+				<a href="#">Hola2</a>
+			</nav>
+			<label for="btn-menu">✖️</label>
+		</div>
+	</div>
+    <br><br><br><br>
+	
+	<!--Medio-->
+	<div class="medio">
+        <header>
+            <h1 class="header-title">Empleados</h1>
+        </header>
+        <main>
+            <button type="button" class="button blue mobile" id="cadastrarCliente">Nuevo Empleado</button>
+            <table id="tableEmpleado" class="records">
+                <thead>
+                    <tr>
+                        <th>Nro</th>
+                        <th>Nombre</th>
+                        <th>E-mail</th>
+                        <th>Cel</th>
+                        <th>Direccion</th>
+                        <th>Puesto</th>
+                        <th>Sector</th>
+                        <th>Tipo</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+    
+            <!--PopUp-->
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h2>Empleado</h2>
+                        <span class="modal-close" id="modalClose">&#10006;</span>
+                    </header>
+    
+                    <!--Contenido del PopUp-->
+                    <form id="form" class="modal-form">
+                        <input type="text" id="codigoEmpleado" data-index="new" class="modal-field" placeholder="Codigo" required>
+                        <input type="text" id="nombreEmpleado" data-index="new" class="modal-field" placeholder="Nombre y Apellido" required>
+                        <input type="email" id="emailEmpleado" class="modal-field" placeholder="E-mail" required>
+                        <input type="text" id="celularEmpleado" class="modal-field" placeholder="Telefono" required>
+                        <input type="text" id="direccionEmpleado" class="modal-field" placeholder="Direccion" required>
+                        
+                        <!--Select-->
+                        <select id="selectPuesto" class="modal-field">
+                            <option>puesto1</option>
+                            <option>puesto2</option>
+                        </select>
+    
+                        <select id="selectSector" class="modal-field">
+                            <option>Sector1</option>
+                            <option>Sector2</option>
+                        </select>
+
+                        <select id="selectTipoEmpleado" class="modal-field">
+                            <option>TipoEmpleado1</option>
+                            <option>TipoEmpleado2</option>
+                        </select>
+
+                        <!--Subir imagen-->
+                        <div class="custom-input-file">
+                            <input type="file" id="archivo" class="input-file">
+                            <label>Subir Imagen</label> 
+                        </div>
+                        <p></p><p></p>
+                        <div class="mostrarImagen">
+                            <img src="" id="preview" class="hola">
+                        </div>
+                        
+                        <script>
+                            function mostrarImagen(event) 
+                            {
+                                var imagenSource = event.target.result;
+                                var previewImage = document.getElementById('preview');
+                                previewImage.src = imagenSource;
+                            }
+    
+                            function procesarArchivo(event)
+                            {
+                                var imagen = event.target.files[0];
+                                var lector = new FileReader();
+                                lector.addEventListener('load', mostrarImagen, false);
+                                lector.readAsDataURL(imagen);
+                            }
+                            document.getElementById("archivo").addEventListener('change', procesarArchivo, false);
+                        </script>
+                        <!--Fin de Subir imagen-->
+                    </form>
+    
+                    <!--Footer del PopUp-->
+                    <footer class="modal-footer">
+                        <button id="salvar" class="button green">Guardar</button>
+                        <button id="cancelar" class="button blue">Cancelar</button>
+                    </footer>
+                </div>
+            </div>
+            <!--Fin del PopUp-->
+        </main>
+	</div>
+</body>
+</html>

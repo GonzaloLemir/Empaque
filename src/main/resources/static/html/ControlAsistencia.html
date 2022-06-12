@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Link para los Icons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <h1>Control de Asistencia</h1>
-      
-      <!--SelectBox-->
+     <script src="../js/verificar_credenciales.js"></script>
+   </head>
+   <body>
+     <div class="wrapper">
+       <h1>Control de Asistencia</h1>
+
+       <!--SelectBox-->
       <div class="select-btn">
         <span>Selecciona un empleado</span>
         <i class="uil uil-angle-down"></i>
@@ -24,16 +25,16 @@
           <i class="uil uil-search"></i>
           <input spellcheck="false" type="text" placeholder="Buscar">
         </div>
-        <ul class="options"></ul>
+        <ul class="options" id="comboBox"></ul>
       </div>
       <br><br>
 
       <!--Botones-->
       <div class="botones">
-        <button class="btn-entrada">Entrada</button> <button class="btn-salida">Salida</button>
+        <button onclick="comprobarAsistenciaEntrada()" class="btn-entrada">Entrada</button> <button onclick="comprobarAsistenciaSalida()" class="btn-salida">Salida</button>
       </div>
     </div>
-    <script type="text/javascript" src="../src/main/resources/static/js/jsAnimaciones/controlAsistencia.js"></script>
+    <script type="text/javascript" src="../js/animaciones/control_asistencia.js"></script>
 
   </body>
 </html>
