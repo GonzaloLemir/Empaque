@@ -20,10 +20,9 @@
 {
     display: flex;
     flex-direction: column;
-    gap:20px;
-    width: 50vw;
-    margin: 15vh auto;
-    padding-bottom: 20px;
+    gap: 12px;
+    width: 35vw;
+    margin: 22vh auto;
     background-color: white;
     box-shadow: 1px 1px 10px black;
 }
@@ -33,9 +32,10 @@
     display: flex;
     position: relative;
     justify-content: center;
-    height: 40px;
+    height: 20px;
     line-height: 40px;
     font-size: 1rem;
+    margin-bottom: 13px;
 }
 
 
@@ -62,11 +62,25 @@
 .modal-form
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     padding: 0 20px;
+    align-items: center;
 }
+
+.form-group label
+{
+    display: inline-block;
+    width: 180px;
+}
+
+.form-group 
+{
+    width: 500px;
+    margin-bottom: -13px;
+}
+
 
 .modal-field
 {
@@ -130,7 +144,6 @@
   
 .custom-input-file .input-file 
 {
-    border: 10000px solid transparent;
     cursor: pointer;
     margin: 0;
     opacity: 0;
@@ -141,15 +154,12 @@
 
 .mostrarImagen
 {
-    
     width: 100px;
     height: 100px;
-    position: relative;
 }
 
 .mostrarImagen img
 {
-    margin-left: -90px;
     width: 200px;
     height: 100px;
 }
@@ -165,4 +175,84 @@
     {
         background-color: rgb(255, 255, 255);
     }
+}
+
+.contenedor1
+{
+    display: flex;
+    width: 100%;
+}
+
+.contenedor2
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.mostrarImagen
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width:1068px)
+{
+    .custom-input-file
+    {
+        height: 55px;
+    }
+}
+
+/*FILTRO DE BUSQUEDA*/
+.Arriba
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Arriba input
+{
+    width: 180px;
+    text-align: left;
+    font-size: 18px;
+    margin: 10px 10px 0px 0px;
+}
+
+.input-wrapper 
+{
+	position: relative;
+	width: 200px;
+}
+
+
+.input-icon 
+{
+	color: #ffffff;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: -20px;
+    margin: 13px 10px 0px 0px;
+}
+
+
+@media (max-width:2450px)
+{
+    .search i
+    {
+        top: 37%;
+    }
+}
+
+.form-group .radio1
+{
+    font-size: 25px;
+}
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
 }

@@ -2,9 +2,10 @@ const wrapper = document.querySelector(".wrapper"),
 selectBtn = wrapper.querySelector(".select-btn"),
 searchInp = wrapper.querySelector("input"),
 options = wrapper.querySelector(".options");
-
 var empleadoId = null;
-
+//Lista para el SelectBox
+let empleados;
+let empleadoMostrar=[];
 
 async function cargarEmpleados(selectedCountry)
 {
@@ -15,13 +16,14 @@ async function cargarEmpleados(selectedCountry)
          'Content-Type': 'application/json'
        }
      });
-     const empleados = await request.json();
+    empleados = await request.json();
     options.innerHTML = "";
     for(let empleado of empleados){
         let id = empleado.id;
         let isSelected = empleado == selectedCountry ? "selected" : "";
         let li = `<li onclick="updateName(this)" class="${isSelected}" value=`+ id +`>${empleado.nombre}</li>`;
         options.insertAdjacentHTML("beforeend", li);
+        empleadoMostrar.push(empleado.nombre);
     };
 }
 cargarEmpleados();
@@ -39,7 +41,7 @@ function updateName(selectedLi)
 searchInp.addEventListener("keyup", () => {
     let arr = [];
     let searchWord = searchInp.value.toLowerCase();
-    arr = empleados.filter(data => {
+    arr = empleadoMostrar.filter(data => {
         return data.toLowerCase().startsWith(searchWord);
     }).map(data => {
         let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";

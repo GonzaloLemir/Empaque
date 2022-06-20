@@ -39,4 +39,5 @@ public class empleado_dao_imp implements empleado_dao{
     public void registrarEmpleado(Empleado empleado) {
         entityManager.merge(empleado);
     }
+
 }

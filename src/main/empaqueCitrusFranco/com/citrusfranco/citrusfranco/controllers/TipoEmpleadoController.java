@@ -1,6 +1,7 @@
 package com.citrusfranco.citrusfranco.controllers;
 
 import com.citrusfranco.citrusfranco.dao.tipoEmpleado.tipoEmpleado_dao;
+import com.citrusfranco.citrusfranco.models.Empleado;
 import com.citrusfranco.citrusfranco.models.TipoEmpleado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +19,13 @@ public class TipoEmpleadoController {
         return TipoEmpleado_dao.getTipoEmpleados();
     }
 
-    @RequestMapping(value = "tipoempleado", method = RequestMethod.POST)
+    @RequestMapping(value = "/tipoempleado", method = RequestMethod.POST)
     public void registrarTipoEmpleado(@RequestBody TipoEmpleado tipoEmpleado){
+        TipoEmpleado_dao.registrarTipoEmpleado(tipoEmpleado);
+    }
+
+    @RequestMapping(value = "/tipoempleado", method = RequestMethod.PUT)
+    public void modificarTipoEmpleado(@RequestBody TipoEmpleado tipoEmpleado){
         TipoEmpleado_dao.registrarTipoEmpleado(tipoEmpleado);
     }
 
@@ -28,8 +34,10 @@ public class TipoEmpleadoController {
         return TipoEmpleado_dao.getTipoEmpleado(id);
     }
 
-    @RequestMapping(value = "tipoempleado/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/tipoempleado/{id}", method = RequestMethod.DELETE)
     public void eliminarTipoEmpleado(@PathVariable long id){
         TipoEmpleado_dao.eliminarTipoEmpleado(id);
     }
+
+
 }

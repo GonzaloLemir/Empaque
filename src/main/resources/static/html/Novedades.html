@@ -2,17 +2,15 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Empleado</title>
+	<title>Novedades</title>
 	<link rel="stylesheet" href="../css/MenuPrincipal.css">
     <!--Link para los Icons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!--CRUD-->
     <link rel="stylesheet" href="../css/Crud-button.css">
     <link rel="stylesheet" href="../css/Crud-main.css">
-    <link rel="stylesheet" href="../css/Crud-modal-empleado.css">
+    <link rel="stylesheet" href="../css/Crud-modal-generico.css">
     <link rel="stylesheet" href="../css/Crud-records.css">
-    <script src="../js/CrudEmpleados.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <!--FIN DEL CRUD-->
 </head>
 <body>
@@ -27,7 +25,7 @@
 			</div>
             
 			<nav class="menu">
-				<a href="MenuPrincipal.html">Inicio</a>
+                <a href="MenuPrincipal.html">Inicio</a>
 				<a href="Empleados.html">Empleados</a>
 				<a href="TipoEmpleado.html">Tipo de empleado</a>
                 <a href="Sector.html">Sector</a>
@@ -37,7 +35,7 @@
 			</nav>
 		</div>
 	</header>
-
+    
 	<div class="capa"></div>
 	<!----------------->
 	<input type="checkbox" id="btn-menu">
@@ -60,11 +58,11 @@
 	<!--Medio-->
 	<div class="medio">
         <header>
-            <h1 class="header-title">Empleados</h1>
+            <h1 class="header-title">Novedades</h1>
         </header>
         <main>
             <div class="Arriba">
-                <button type="button" class="button blue mobile" id="cadastrarCliente">Nuevo empleado</button>
+                <button type="button" class="button blue mobile" id="cadastrarCliente">Nuevas novedades</button>
 
                 <div class="content">
                     <div class="search">
@@ -75,18 +73,16 @@
                 </div>
             </div>
             
-            
-            <table id="tableEmpleado" class="records">
+            <table id="tableClient" class="records">
                 <thead>
                     <tr>
-                        <th>Nro</th>
-                        <th>Nombre</th>
-                        <th>E-mail</th>
-                        <th>Cel</th>
-                        <th>Dirección</th>
-                        <th>Puesto</th>
-                        <th>Sector</th>
-                        <th>Tipo</th>
+                        <th>Fecha</th>
+                        <th>Codigo</th>
+                        <th>Concepto</th>
+                        <th>Cantidad</th>
+                        <th>Monto</th>
+                        <th>Unitario</th>
+                        <th>Total</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
@@ -98,73 +94,46 @@
             <div class="modal" id="modal">
                 <div class="modal-content">
                     <header class="modal-header">
-                        <h2 style="color: black;">Empleado</h2>
+                        <h2 style="color: black;">Novedades</h2>
                         <span class="modal-close" id="modalClose">&#10006;</span>
                     </header>
     
                     <!--Contenido del PopUp-->
                     <form id="form" class="modal-form">
-
+                        <div class="form-group">
+                            <label style="color: black;">Fecha</label>
+                            <input type="date" id="FechaEmpleado" data-index="new" class="modal-field" required>
+                        </div>
+                        
                         <div class="form-group">
                             <label style="color: black;">Codigo</label>
-                            <input type="text" id="codigoEmpleado" data-index="new" class="modal-field" placeholder="Codigo" required>
+                            <input type="text" id="CodigoEmpleado" data-index="new" class="modal-field" placeholder="Codigo" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="color: black;">Nombre y apellido</label>
-                            <input type="text" id="nombreEmpleado" data-index="new" class="modal-field" placeholder="Nombre y Apellido" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label style="color: black;">E-mail</label>
-                            <input type="email" id="emailEmpleado" class="modal-field" placeholder="E-mail" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label style="color: black;">Telefono</label>
-                            <input type="text" id="celularEmpleado" class="modal-field" placeholder="Telefono" required> 
+                            <label style="color: black;">Concepto</label>
+                            <input type="text" id="ConceptoEmpleado" data-index="new" class="modal-field" placeholder="Concepto" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="color: black;">Dirección</label>
-                            <input type="text" id="direccionEmpleado" class="modal-field" placeholder="Dirección" required>
+                            <label style="color: black;">Cantidad</label>
+                            <input type="text" id="ConceptEmpleado" data-index="new" class="modal-field" placeholder="Cantidad" required>
                         </div>
 
-                        <!--Select-->
                         <div class="form-group">
-                            <label style="color: black;">Puesto</label>
-                            <select id="selectPuesto" class="modal-field">
-                            </select>
+                            <label style="color: black;">Monto</label>
+                            <input type="text" id="MontoEmpleado" data-index="new" class="modal-field" placeholder="Monto" required>
                         </div>
                         
-
                         <div class="form-group">
-                            <label style="color: black;">Sector</label>
-                            <select id="selectSector" class="modal-field">
-                            </select>
+                            <label style="color: black;">Unitario</label>
+                            <input type="text" id="UnitarioEmpleado" data-index="new" class="modal-field" placeholder="Unitario" required>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label style="color: black;">Tipo de empleado</label>
-                            <select id="selectTipoEmpleado" class="modal-field">
-                            </select>
+                            <label style="color: black;">Total</label>
+                            <input type="text" id="TotalEmpleado" data-index="new" class="modal-field" placeholder="Total" required>
                         </div>
-                    
-                        <!--Subir imagen-->
-                        <div class="contenedor1">
-                            <div class="contenedor2">
-                                <div class="custom-input-file">
-                                    <input type="file" id="archivo" class="input-file">
-                                    <label>Subir Imagen</label> 
-                                </div>
-                            </div>
-                           
-                            
-                            <div class="mostrarImagen">
-                                <img src="" id="preview" class="hola">
-                            </div>
-                        </div>
-                        <!--Fin de Subir imagen-->
                     </form>
     
                     <!--Footer del PopUp-->
@@ -177,6 +146,5 @@
             <!--Fin del PopUp-->
         </main>
 	</div>
-
 </body>
 </html>

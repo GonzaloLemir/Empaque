@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Tipo de empleado</title>
+	<link rel="stylesheet" href="../css/MenuPrincipal.css">
+    <!--Link para los Icons-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!--CRUD-->
+    <link rel="stylesheet" href="../css/Crud-button.css">
+    <link rel="stylesheet" href="../css/Crud-main.css">
+    <link rel="stylesheet" href="../css/Crud-modal-generico.css">
+    <link rel="stylesheet" href="../css/Crud-records.css">
+    <script src="../js/CrudTipoEmpleados.js" defer></script>
+    <!--FIN DEL CRUD-->
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="btn-menu">
+				<label for="btn-menu">☰</label>
+			</div>
+            
+			<div class="logo">
+				<h1>Citrus Franco</h1>
+			</div>
+            
+			<nav class="menu">
+                <a href="MenuPrincipal.html">Inicio</a>
+				<a href="Empleados.html">Empleados</a>
+				<a href="TipoEmpleado.html">Tipo de empleado</a>
+                <a href="Sector.html">Sector</a>
+                <a href="Puestos.html">Puesto</a>
+                <a href="Novedades.html">Novedades</a>
+                <a href="Conceptos.html">Conceptos</a>
+			</nav>
+		</div>
+	</header>
+    
+	<div class="capa"></div>
+	<!----------------->
+	<input type="checkbox" id="btn-menu">
+	<div class="container-menu">
+		<div class="cont-menu">
+			<nav>
+				<a href="MenuPrincipal.html">Inicio</a>
+				<a href="Empleados.html">Empleados</a>
+				<a href="TipoEmpleado.html">Tipo de empleado</a>
+                <a href="Sector.html">Sector</a>
+                <a href="Puestos.html">Puesto</a>
+                <a href="Novedades.html">Novedades</a>
+                <a href="Conceptos.html">Conceptos</a>
+			</nav>
+			<label for="btn-menu">✖️</label>
+		</div>
+	</div>
+    <br><br><br><br>
+	
+	<!--Medio-->
+	<div class="medio">
+        <header>
+            <h1 class="header-title">Tipo de empleado</h1>
+        </header>
+        <main>
+            <div class="Arriba">
+                <button type="button" class="button blue mobile" id="cadastrarCliente">Nuevo tipo de empleado</button>
+
+                <div class="content">
+                    <div class="search">
+                      <i class="uil uil-search"></i>
+                      <input spellcheck="false" type="text" placeholder="Buscar...">
+                    </div>
+                    <ul class="options"></ul>
+                </div>
+            </div>
+           
+            <table id="tableTipoEmpleado" class="records">
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+    
+            <!--PopUp-->
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h2 style="color: black;">Tipo de empleado</h2>
+                        <span class="modal-close" id="modalClose">&#10006;</span>
+                    </header>
+    
+                    <!--Contenido del PopUp-->
+                    <form id="form" class="modal-form">
+                        <div class="form-group">
+                            <label style="color: black;">Descripción</label>
+                            <input type="text" id="descripcion" data-index="new" class="modal-field" placeholder="Descripción" required>
+                        </div>
+                    </form>
+    
+                    <!--Footer del PopUp-->
+                    <footer class="modal-footer">
+                        <button id="salvar" class="button green">Guardar</button>
+                        <button id="cancelar" class="button blue">Cancelar</button>
+                    </footer>
+                </div>
+            </div>
+            <!--Fin del PopUp-->
+        </main>
+	</div>
+</body>
+</html>

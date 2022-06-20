@@ -19,13 +19,13 @@ public class concepto_dao_imp implements concepto_dao{
 
     @Override
     public List<Concepto> getConcepto() {
-        String query = "FROM concepto";
+        String query = "FROM Concepto";
         return entityManager.createQuery(query).getResultList();
     }
 
     @Override
     public Concepto getConcepto(long id) {
-        String query = "FROM concepto WHERE id = "+id+"";
+        String query = "FROM Concepto WHERE id = "+id+"";
         return (Concepto) entityManager.createQuery(query).getSingleResult();
     }
 

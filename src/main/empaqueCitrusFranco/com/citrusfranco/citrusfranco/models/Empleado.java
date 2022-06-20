@@ -36,7 +36,7 @@ public class Empleado {
     private String direccion;
 
     @Getter @Setter @Column(name = "foto")
-    private byte[] foto;
+    private String foto;
 
     @Getter @Setter @Column(name = "puestoid")
     private long puestoid;

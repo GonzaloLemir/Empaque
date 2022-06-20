@@ -18,8 +18,13 @@ public class EmpleadoController {
         return Empleado_dao.getEmpleado();
     }
 
-    @RequestMapping(value = "empleado", method = RequestMethod.POST)
+    @RequestMapping(value = "/empleado", method = RequestMethod.POST)
     public void registrarEmpleado(@RequestBody Empleado empleado){
+        Empleado_dao.registrarEmpleado(empleado);
+    }
+
+    @RequestMapping(value = "/empleado", method = RequestMethod.PUT)
+    public void modificarEmpleado(@RequestBody Empleado empleado){
         Empleado_dao.registrarEmpleado(empleado);
     }
 
@@ -33,3 +38,6 @@ public class EmpleadoController {
         Empleado_dao.eliminarEmpleado(id);
     }
 }
+
+
+

@@ -6,6 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body background="../img/fondoLogin.jpg" style="background-size: cover; background-repeat: no-repeat;">
 	<!--Contenedor del Login-->
@@ -22,8 +23,8 @@
            		   </div>
 
            		   <div class="div">
-           		   		<h5 style="color: rgb(98, 86, 86);">Nombre de usuario</h5>
-           		   		<input id="nombreUsuario" type="text" class="input" >
+           		   		<h5  style="color: rgb(98, 86, 86);">Nombre de usuario</h5>
+           		   		<input id="nombreUsuario" type="text" class="input" autocomplete="off">
            		   </div>
            		</div>
 
@@ -35,7 +36,7 @@
 
            		   <div class="div">
            		    	<h5 style="color: rgb(98, 86, 86);">Clave</h5>
-           		    	<input id="passwordUsuario" type="password" class="input">
+           		    	<input id="passwordUsuario" type="password" class="input" autocomplete="off">
             	   </div>
             	</div>
 
@@ -43,9 +44,7 @@
             </form>
         </div>
     </div>
-    <script src="../js/animaciones/login_animacion.js"></script>
-	<script src="../js/login.js"></script>
-
-
+	<script type="text/javascript" src="../js/login.js"></script>
+	<script type="text/javascript" src="../js/animaciones/login_animacion.js"></script>
 </body>
 </html>
