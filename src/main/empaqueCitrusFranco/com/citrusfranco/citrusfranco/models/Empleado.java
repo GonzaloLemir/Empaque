@@ -23,6 +23,9 @@ public class Empleado {
     @Getter @Setter @Column(name = "codigoempleado")
     private long codigoempleado;
 
+    @Getter @Setter @Column(name = "legajoempleado")
+    private long legajoempleado;
+
     @Getter @Setter @Column(name = "nombreapellido")
     private String nombre;
 
@@ -35,14 +38,20 @@ public class Empleado {
     @Getter @Setter @Column(name = "direccion")
     private String direccion;
 
-    @Getter @Setter @Column(name = "foto")
-    private String foto;
+    @Getter @Setter @Column(name = "dni")
+    private long dni;
+
+    @Getter @Setter @Column(name = "fotoperfil")
+    private String fotoperfil;
+
+    @Getter @Setter @Column(name = "fotodni")
+    private String fotodni;
+
+    @Getter @Setter @Column(name = "fotocarnet")
+    private String fotocarnet;
 
     @Getter @Setter @Column(name = "puestoid")
     private long puestoid;
-
-    @Getter @Setter @Column(name = "sectorid")
-    private long sectorid;
 
     @Getter @Setter @Column(name = "tipoempleadoid")
     private long tipoempleadoid;

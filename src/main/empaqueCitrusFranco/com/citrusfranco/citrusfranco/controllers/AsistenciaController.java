@@ -21,9 +21,9 @@ public class AsistenciaController {
         return Asistencia_dao.getAsistencia();
     }
 
-    @RequestMapping(value = "/asistencia", method = RequestMethod.POST)
-    public void registrarAsistencia(@RequestBody int idEmpleado){
-        Asistencia_dao.registrarAsistencia(idEmpleado);
+    @RequestMapping(value = "/asistencia/{sectorid}", method = RequestMethod.POST)
+    public void registrarAsistencia(@PathVariable int sectorid, @RequestBody int idEmpleado){
+         Asistencia_dao.registrarAsistencia(idEmpleado, sectorid);
     }
 
     @RequestMapping(value = "/asistenciaSalida", method = RequestMethod.POST)
@@ -56,6 +56,7 @@ public class AsistenciaController {
     public String comprobarAsistenciaSalida(@RequestBody int idEmpleado){
         Asistencia asistenciaComprobar = Asistencia_dao.ultimoRegistro(idEmpleado);
         if(asistenciaComprobar != null) {
+
             if(asistenciaComprobar.getSalida() == null){return "OK";}
             else {return "NO";}
         }

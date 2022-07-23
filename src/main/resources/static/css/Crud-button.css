@@ -1,4 +1,5 @@
-.button{
+.button
+{
     border-style: none;
     height: 40px;
     padding: 6px 12px;
@@ -6,20 +7,32 @@
     color: white;
     font-size: 1rem;
     cursor: pointer;
-    transition: box-shadow .6s ease;
 }
-
-.button.blue{
+button:hover
+{
+    transition: box-shadow .6s ease;
+    background-color:orange;
+}
+.button.blue
+{
     background-color: #1FB6FF;
 }
 
-button.green{
+button.green
+{
     background-color: #13CE66;
 }
-
+button.gris
+{
+    background-color: #efefef00;
+    border: solid black;
+    border-radius: 15px;
+    color: black;
+}
 button.red{
     background-color: #FF4949;
 }
+
 
 .button:hover{
     box-shadow: inset 200px 0 0 #00000055;

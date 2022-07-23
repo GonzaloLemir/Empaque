@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">  
-    <title>Control de Asistencia</title>
-    <link rel="stylesheet" href="../css/ControlAsistencia.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Link para los Icons-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <h1>Control de Asistencia</h1>
-      
-      <!--SelectBox-->
-      <div class="select-btn">
-        <span>Selecciona un empleado</span>
-        <i class="uil uil-angle-down"></i>
-      </div>
-      
-      <!--Contenido dentro del SelectBox-->
-      <div class="content">
-        <div class="search">
-          <i class="uil uil-search"></i>
-          <input spellcheck="false" type="text" placeholder="Buscar">
-        </div>
-        <ul class="options"></ul>
-      </div>
-      <br><br>
-      
-      <!--Botones-->
-      <div class="botones">
-        <button onclick="comprobarAsistenciaEntrada()" class="btn-entrada">Entrada</button> <button onclick="comprobarAsistenciaSalida()" class="btn-salida">Salida</button>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <title>Control de Asistencia</title>
+  <link rel="stylesheet" href="../css/ControlAsistencia2.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Link para los Icons-->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body >
+<div class="contenedor-principal">
+  <!--CONTROL ASISTENCIA-->
+  <div class="wrapper">
+    <h1>Control de Asistencia</h1>
+
+    <div class="aloha">
+      <select>
+        <option>Selecciona un Sector</option>
+      </select>
     </div>
-    <script src="../js/animaciones/control_asistencia.js"></script>
-  </body>
+
+    <!--Boton izquierdo de Limpiar -->
+    <div class="botones-izquierdo">
+      <button class="btn-limpiar">Limpiar</button>
+    </div>
+
+    <!--SelectBox-->
+    <div class="select-btn" >
+      <span>Selecciona un empleado</span>
+      <i class="uil uil-angle-down"></i>
+    </div>
+
+    <!--Contenido dentro del SelectBox-->
+    <div class="content" id="listaempleados">
+      <div class="search">
+        <i class="uil uil-search"></i>
+        <input spellcheck="false" type="text" placeholder="Buscar">
+      </div>
+      <ul class="options"></ul>
+    </div>
+    <br><br>
+
+  </div>
+
+  <!--Grilla Empleados registrados-->
+  <div class="contenedor-empleados-registrados" >
+    <table class="contenedor-tabla" id="emplist">
+      <thead>
+      <tr>
+        <th>Empleado</th>
+        <th>DNI</th>
+        <th>Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!--Footer-Botones-->
+<div class="botones">
+  <button class="btn-entrada" onclick="comprobarAsistenciaEntrada()">Entrada</button> <button class="btn-salida" onclick="comprobarAsistenciaSalida()">Salida</button>
+</div>
+<script src="../js/animaciones/control_asistencia.js"></script>
+</body>
 </html>

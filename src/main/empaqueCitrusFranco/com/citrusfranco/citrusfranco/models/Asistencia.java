@@ -32,4 +32,7 @@ public class Asistencia {
     @Getter @Setter @Column(name = "salida")
     private Timestamp salida;
 
+    @Getter @Setter @Column(name = "sectorid")
+    private long sectorid;
+
 }

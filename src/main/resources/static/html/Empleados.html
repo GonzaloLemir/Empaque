@@ -9,7 +9,7 @@
     <!--CRUD-->
     <link rel="stylesheet" href="../css/Crud-button.css">
     <link rel="stylesheet" href="../css/Crud-main.css">
-    <link rel="stylesheet" href="../css/Crud-modal-empleado.css">
+    <link rel="stylesheet" href="../css/Crud-modal-empleado1.css">
     <link rel="stylesheet" href="../css/Crud-records.css">
     <script src="../js/CrudEmpleados.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -52,7 +52,7 @@
                 <a href="Novedades.html">Novedades</a>
                 <a href="Conceptos.html">Conceptos</a>
 			</nav>
-			<label for="btn-menu">✖️</label>
+			<label for="btn-menu">✖</label>
 		</div>
 	</div>
     <br><br><br><br>
@@ -83,7 +83,7 @@
                         <th>Nombre</th>
                         <th>E-mail</th>
                         <th>Cel</th>
-                        <th>Dirección</th>
+                        <th>DNI</th>
                         <th>Puesto</th>
                         <th>Sector</th>
                         <th>Tipo</th>
@@ -106,77 +106,82 @@
                     <form id="form" class="modal-form">
 
                         <div class="form-group">
-                            <label style="color: black;">Codigo</label>
+                            <label>Codigo</label>
                             <input type="text" id="codigoEmpleado" data-index="new" class="modal-field" placeholder="Codigo" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="color: black;">Nombre y apellido</label>
+                            <label>Nombre y apellido</label>
                             <input type="text" id="nombreEmpleado" data-index="new" class="modal-field" placeholder="Nombre y Apellido" required>
                         </div>
 
                         <div class="form-group">
-                            <label style="color: black;">E-mail</label>
+                            <label>E-mail</label>
                             <input type="email" id="emailEmpleado" class="modal-field" placeholder="E-mail" required>
                         </div>
 
                         <div class="form-group">
-                            <label style="color: black;">Telefono</label>
+                            <label>Telefono</label>
                             <input type="text" id="celularEmpleado" class="modal-field" placeholder="Telefono" required> 
+                        </div>
+
+                        <div class="form-group">
+                            <label>DNI</label>
+                            <input type="number" id="dni" class="modal-field" placeholder="DNI" required>
                         </div>
                         
                         <div class="form-group">
-                            <label style="color: black;">Dirección</label>
+                            <label>Dirección</label>
                             <input type="text" id="direccionEmpleado" class="modal-field" placeholder="Dirección" required>
                         </div>
 
                         <!--Select-->
                         <div class="form-group">
-                            <label style="color: black;">Puesto</label>
+                            <label>Puesto</label>
                             <select id="selectPuesto" class="modal-field">
                             </select>
                         </div>
-                        
 
                         <div class="form-group">
-                            <label style="color: black;">Sector</label>
-                            <select id="selectSector" class="modal-field">
+                            <label>Tipo de empleado</label>
+                            <select id="selectTipoEmpleado" class="modal-field" style="margin-left: -2px;">
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label style="color: black;">Tipo de empleado</label>
-                            <select id="selectTipoEmpleado" class="modal-field">
+                            <label>Legajo</label>
+                            <input type="text" id="legajoEmmpleado" class="modal-field" placeholder="Legajo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Foto elegir</label>
+                            <select id="selectFotoElegir" class="modal-field">
+                                <option value="DNI">DNI</option>
+                                <option value="PERFIL">PERFIL</option>
+                                <option value="CARNET">CARNET</option>
                             </select>
                         </div>
-                    
-                        <!--Subir imagen-->
-                        <div class="contenedor1">
-                            <div class="contenedor2">
-                                <div class="custom-input-file">
-                                    <input type="file" id="archivo" class="input-file">
-                                    <label>Subir Imagen</label> 
-                                </div>
-                            </div>
-                           
-                            
-                            <div class="mostrarImagen">
-                                <img src="" id="preview" class="hola">
-                            </div>
+
+                        <!--Imagenes subidas-->
+                        <div class="SubirImagen-Contenedor">
+                            <img src="../img/dni-empleado.png" id="previewDoc" alt="">
+                            <img src="../img/empleado-perfil.png" id="previewPer" alt="">
+                            <img src="../img/carnet.png" id="previewCar" alt="">
                         </div>
                         <!--Fin de Subir imagen-->
                     </form>
-    
+
                     <!--Footer del PopUp-->
                     <footer class="modal-footer">
-                        <button id="salvar" class="button green">Guardar</button>
-                        <button id="cancelar" class="button blue">Cancelar</button>
+                        <input type="file" id="archivo" class="input-file" style="font-size:1px; opacity: 0;">
+                        <button id="subir_imagen" class="button gris">Subir Imagen</button>
+                        <button id="salvar" class="button gris">Guardar</button>
+                        <button id="cancelar" class="button gris">Cancelar</button>
                     </footer>
                 </div>
             </div>
             <!--Fin del PopUp-->
         </main>
 	</div>
-
 </body>
 </html>

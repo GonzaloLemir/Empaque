@@ -15,7 +15,7 @@ public interface asistencia_dao {
 
     void eliminarAsistencia(long id);
 
-    void registrarAsistencia(int idEmpleado);
+    void registrarAsistencia(int idEmpleado, int sectorid);
 
     void registrarAsistenciaSalida(int idEmpleado);
 

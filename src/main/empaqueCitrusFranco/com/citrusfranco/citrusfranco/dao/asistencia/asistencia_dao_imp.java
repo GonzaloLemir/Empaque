@@ -52,7 +52,7 @@ public class asistencia_dao_imp implements asistencia_dao{
     }
 
     @Override
-    public void registrarAsistencia(int idEmpleado) {
+    public void registrarAsistencia(int idEmpleado, int sectorid) {
 
         TimeZone.setDefault(TimeZone.getTimeZone("America/Argentina/Tucuman"));
         Date dt = new Date();
@@ -65,6 +65,7 @@ public class asistencia_dao_imp implements asistencia_dao{
         asistencia.setCodigoempleado(idEmpleado);
         asistencia.setEntrada(newTime);
         asistencia.setSalida(null);
+        asistencia.setSectorid(sectorid);
 
         entityManager.merge(asistencia);
     }
